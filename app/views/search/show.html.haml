@@ -10,3 +10,14 @@
     - else
       %li
         %a{:href => "/auth/google_oauth2"} Sign In
+
+#tutorSearch
+  - @tutors.each do |tutor|
+    .tutorPanel
+      .img
+        %img{:src => "/no_dp.png", :style => "width: 90px;"}
+      .tutorinfo
+        %p.tutorname= tutor.name
+        %p= tutor.subject
+        %p= tutor.bio
+      
