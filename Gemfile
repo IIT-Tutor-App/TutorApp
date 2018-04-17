@@ -34,6 +34,9 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# User Faker to generate fake data about Tutors
+gem 'faker'
+
 # Use Google for O-Auth 
 gem 'omniauth-google-oauth2'
 
