@@ -2,8 +2,14 @@
   %h2
     %a{:href => "#"} TutorU
   %nav
-    %li
-      %a{:href => "#"} Sign In
+    - if signed_in?
+      %li
+        %a{:href => "#"}= "Logged in as: #{current_user.name}"
+      %li
+        %a{:href => "/logout"}= "Logout"
+    - else
+      %li
+        %a{:href => "/auth/google_oauth2"} Login
 %section.hero
   .background-image{:style => "background-image: url(/tutorapp.jpg);"}
   .hero-content-area
