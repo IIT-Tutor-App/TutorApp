@@ -1,0 +1,32 @@
+// Place all the styles related to the search controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#tutorSearch {
+  position: relative;
+  top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tutorPanel {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 16px;
+  padding: 10px;
+  width: 56vw;
+  margin: 7px 0;
+}
+
+.tutorinfo {
+  margin: 0 20px;
+}
+
+.tutorinfo p {
+  margin: 5px 0;
+}
+
+.tutorname {
+  font-size: 20px;
+}
