@@ -20,4 +20,5 @@
         %p.tutorname= tutor.name
         %p= tutor.subject
         %p= tutor.bio
-      
+- @sessions.each do |session|
+  %p= session
