@@ -17,8 +17,10 @@ for x in 1..10
   tutor.bio = Faker::Lorem.paragraphs(1)[0]
   tutor.subject = Faker::Pokemon.name
   tutor.save
-  session = Session.new
-  session.data = Faker::Date.forward(23)
-  session.tutor_id = tutor
-  session.save
+  for x in 1..3
+    session = Session.new
+    session.date_time = Faker::Time.forward(23, :morning)
+    session.tutor_id = tutor.id
+    session.save
+  end
 end
