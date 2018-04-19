@@ -7,6 +7,10 @@
   %b Email:
   = @tutor.email
 
+%p
+  %b Times to Book:
+  = @tutor.sessions[0].date_time
+
 = link_to 'Edit', edit_tutor_path(@tutor)
 \|
 = link_to 'Back', tutors_path
