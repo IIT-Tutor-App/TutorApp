@@ -11,6 +11,7 @@
       %li
         %a{:href => "/auth/google_oauth2"} Sign In
 
+
 #tutorSearch
   - @tutors.each do |tutor|
     .tutorPanel
@@ -20,4 +21,5 @@
         %p.tutorname= tutor.name
         %p= tutor.subject
         %p= tutor.bio
-      
+        - tutor.sessions.each do |session|
+          %p= session.date_time
