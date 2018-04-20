@@ -6,10 +6,14 @@
 %p
   %b Email:
   = @tutor.email
-
+%p
+  %b Subject:
+  = @tutor.subject
 %p
   %b Times to Book:
-  = @tutor.sessions[0].date_time
+
+- @tutor.sessions.each do |session|
+  %p= session.date_time
 
 = link_to 'Edit', edit_tutor_path(@tutor)
 \|
