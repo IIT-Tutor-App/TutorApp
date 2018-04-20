@@ -22,8 +22,4 @@
         %p= tutor.subject
         %p= tutor.bio
 
-        %p= link_to 'Book Me', tutor
-
-        - tutor.sessions.each do |session|
-          %p= session.date_time
-
+        %p= link_to 'Book Me', tutor, {:class => "btn"}
