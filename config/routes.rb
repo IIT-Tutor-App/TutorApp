@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   resources :tutors
 
+  resources :students
+
   get 'search', to: 'search#show', as: 'search'
 
   get 'logout', to: 'sessions#logout', as: 'logout'
