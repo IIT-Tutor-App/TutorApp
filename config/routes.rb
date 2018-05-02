@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   root 'landing#show'
 
   resources :tutors
+  
+  get 'tutors/session/:id', to: 'tutors#createsession'
 
   resources :students
 

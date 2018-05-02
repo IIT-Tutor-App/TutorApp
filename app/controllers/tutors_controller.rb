@@ -36,6 +36,12 @@ class TutorsController < ApplicationController
       end
     end
   end
+  
+  def createsession
+    student = Student.where(email: "#{current_user.email}").take
+    student.sessions.push(Session.find(params['id']))
+    redirect_to student
+  end
 
   # PATCH/PUT /tutors/1
   # PATCH/PUT /tutors/1.json

@@ -7,6 +7,13 @@
   %b Email:
   = @student.email
 
+- @student.sessions.each do |session|
+  %p
+    = session.date_time
+    %span 
+      with
+      = session.tutor.name
+
 = link_to 'Edit', edit_student_path(@student)
 \|
 = link_to 'Back', students_path
