@@ -1,0 +1,33 @@
+%header{:style => "background: black; opacity: 1; padding: 14px 97px;"}
+  %h2
+    %a{:href => "#"} TutorU
+  %nav
+    - if signed_in?
+      %li
+        %a{:href => "#"}= "Logged in as: #{current_user.name}"
+      %li
+        %a{:href => "/logout"}= "Logout"
+    - else
+      %li
+        %a{:href => "/auth/google_oauth2"} Sign In
+
+.tutorProfile{:style => "padding: 73px;"}
+  %p#notice= notice
+  %p
+    %b Name:
+    = @tutor.name
+  %p
+    %b Email:
+    = @tutor.email
+  %p
+    %b Subject:
+    = @tutor.subject
+  %p{:style => "margin-bottom: 10px;"}
+    %b Times to Book:
+  
+  - @tutor.sessions.each do |session|
+    %a.btn{:href => "session/#{session.id}"}= session.date_time
+
+.navButtons{:style => "display: flex; justify-content: center;"}
+  = link_to 'Edit', edit_tutor_path(@tutor), {:class => "btn", :style => "margin: 10px;"}
+  = link_to 'Back', tutors_path, {:class => "btn", :style => "margin: 10px;"}
