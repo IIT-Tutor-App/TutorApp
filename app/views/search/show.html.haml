@@ -6,6 +6,8 @@
       %li
         %a{:href => "/"}= "Logged in as: #{current_user.name}"
       %li
+        %a{:href => "/students/#{current_user.id}"}= "My Sessions"
+      %li
         %a{:href => "/logout"}= "Logout"
     - else
       %li
