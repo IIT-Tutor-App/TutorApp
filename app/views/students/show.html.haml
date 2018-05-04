@@ -1,5 +1,5 @@
 %p#notice= notice
-
+%h1 My Sessions
 %p
   %b Name:
   = @student.name
@@ -10,10 +10,9 @@
 - @student.sessions.each do |session|
   %p
     = session.date_time
-    %span 
+    %span
       with
       = session.tutor.name
 
-= link_to 'Edit', edit_student_path(@student)
-\|
-= link_to 'Back', students_path
+.navButtons{:style => "display: flex; justify-content: center;"}
+  = link_to 'Back', search_path, {:class => "btn", :style => "margin: 10px;"}
